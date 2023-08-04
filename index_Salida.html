@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <meta charset="UTF-8">
+    <title>Humans</title>
+    <link rel="stylesheet" href="./index_Humans.css">
+
+  </head>
+
+  <body align="center">
+
+    <h1>.</h1>
+    <h1>.</h1>
+
+    <h1>Humans</h1>
+    <img  src="images/icon.png" width="100px">
+
+    <h2>Cerrar Sesión</h2>
+    <p>Gracias Humano por tus <strong>colaboraciones</strong>.
+    <br>La <strong>vida</strong> sobre el planeta Tierra
+    <br>nos necesita a todos en permanente <strong>humanización</strong>.
+    <br>Contamos contigo, hasta pronto!.</p>
+
+    <button id="id_boton_cerrar" type="button" onclick="salir_registrar()">Cerrar Sesión</button>    
+    <br>
+    <p><img src="./images/tierra.png" width="100px"></p>
+
+    <h2>Me arrepentí</h2>
+    <p>Wena, sigamos <strong>colaborando!</strong>.</p>
+
+    <button id="id_boton_misiones" type="button" onclick="ir_a_misiones()"> Ver Misiones </button>
+    <br>
+
+    <h1>.</h1>
+    <h1>.</h1>
+    <h1>.</h1>
+    <h1>.</h1>
+
+    <h2>Escribir en la Bitacora</h2>
+    <p>Esto es una prueba de escritura.</p>
+
+    <button id="id_boton_escritura" type="button" onclick="escribir_bitacora()"> Escrbir </button>
+    <br>
+
+    <h2>Ficha del Usuario</h2>
+    <div id="userData"></div>
+
+    <h2>Actualizar ficha del Usuario</h2>
+    <p>Esto es una prueba de escritura.</p>
+
+    <button id="id_boton_w_usuario" type="button" onclick="actualiza_usuario()"> Escrbir </button>
+    <br>
+
+    <h1>.</h1>
+
+    <!--<script type="module" src="./index_Salida.js"  ></script>
+    <script type="module">
+      import { logout, ir_a_misiones, escribir_bitacora2} from './index_Salida.js';
+      document.getElementById('id_boton_cerrar').addEventListener('click', logout);
+      document.getElementById('id_boton_misiones').addEventListener('click', ir_a_misiones);
+      document.getElementById('id_boton_escritura').addEventListener('click', escribir_bitacora2);
+    </script>-->
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+    <script src="index_Firestore.js"></script>
+    <script src="index_Salida.js"></script>
+  </body>
+</html>
+
+
+<!--     -->

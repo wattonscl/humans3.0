@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="centralImage" src="icon.png" width="100"  class="orbit">
+        <img id="orbitImage1" src="icon.png" width="50"  class="orbit">
+        <img id="orbitImage2" src="icon.png" width="50"  class="orbit">
+        <img id="orbitImage3" src="icon.png" width="50"  class="orbit">
+    </div>
+
+    <script>
+        // Variables para la animación
+        var centralImage = document.getElementById('centralImage');
+        var orbitImage1 = document.getElementById('orbitImage1');
+        var orbitImage2 = document.getElementById('orbitImage2');
+        var orbitImage3 = document.getElementById('orbitImage3');
+        var radius = 100; // Radio de la órbita
+        var speed1 = 0.003; // Velocidad de rotación para la primera imagen
+        var speed2 = 0.004; // Velocidad de rotación para la segunda imagen
+        var speed3 = 0.005; // Velocidad de rotación para la tercera imagen
+
+        // Función para animar las imágenes en la órbita
+        function animateOrbit() {
+            // Calcula las nuevas posiciones para las imágenes
+            var angle1 = speed1 * Date.now();
+            var angle2 = speed2 * Date.now();
+            var angle3 = speed3 * Date.now();
+
+            var x1 = Math.cos(angle1) * radius;
+            var y1 = Math.sin(angle1) * radius;
+            var x2 = Math.cos(angle2) * radius;
+            var y2 = Math.sin(angle2) * radius;
+            var x3 = Math.cos(angle3) * radius;
+            var y3 = Math.sin(angle3) * radius;
+
+            // Aplica las posiciones a las imágenes
+            orbitImage1.style.left = centralImage.offsetLeft - x1 + 'px';
+            orbitImage1.style.top = centralImage.offsetTop - y1 + 'px';
+            orbitImage2.style.left = centralImage.offsetLeft - x2 + 'px';
+            orbitImage2.style.top = centralImage.offsetTop - y2 + 'px';
+            orbitImage3.style.left = centralImage.offsetLeft - x3 + 'px';
+            orbitImage3.style.top = centralImage.offsetTop - y3 + 'px';
+
+            // Repite la animación
+            requestAnimationFrame(animateOrbit);
+        }
+
+        // Inicia la animación
+        animateOrbit();
+    </script>
+</body>
+</html>

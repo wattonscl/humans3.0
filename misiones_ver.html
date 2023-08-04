@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <meta charset="UTF-8">
+    <title>Humans</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./index_Humans.css">
+
+  </head>
+
+  <body align="center">
+
+    <h1>.</h1>
+    <h1>.</h1>
+
+    <h1>Humans</h1>
+    <img  src="images/icon.png" width="100px">
+    <br><p></p>
+    <button id="id_boton_crear" type="button" onclick="ir_a_crear_doc()"> Crear Documento </button>
+    <br><p></p>
+    <button id="id_boton_salir" type="button" onclick="ir_a_logout()"> Salir de Humans </button>
+    <br><p></p>
+
+    <button id="id_boton_ver_s" type="button" onclick="ir_a_ver_doc_s()"> Ver Solicitud </button>
+    <br><p></p>
+    <button id="id_boton_ver_b" type="button" onclick="ir_a_ver_doc_b()"> Ver Bitacora </button>
+    <br><p></p>
+    <button id="id_boton_ver_m" type="button" onclick="ir_a_ver_doc_m()"> Ver Misión </button>
+    <br><p></p>
+
+    <button id="id_boton_ver2_s" type="button" onclick="ir_a_ver2_doc_s()"> Ver2 Solicitud </button>
+    <br><p></p>
+    <button id="id_boton_ver2_b" type="button" onclick="ir_a_ver2_doc_b()"> Ver2 Bitacora </button>
+    <br><p></p>
+    <button id="id_boton_ver2_m" type="button" onclick="ir_a_ver2_doc_m()"> Ver2 Misión </button>
+    <br><p></p>
+
+    <h2>Tus Misiones</h2><!-- Carrusel Misiones -->
+    <p>Enterate de las <strong>colaboraciones</strong> que has recibido
+    <br>y completa tu misión!</p>
+
+    <div class="swiper-container mision-swiper">
+      <div class="swiper-wrapper">
+        <!-- Aquí se generarán los slides del carrusel de Mision -->
+      </div>
+    </div>
+
+    <h1>.</h1>
+    <h1>.</h1>
+    <h1>.</h1>
+    <h1>.</h1>
+
+    <h2>Nuestras Misiones</h2><!-- Carrusel Opciones del Menú -->
+    <p>Enterate de las <strong>colaboraciones</strong> que necesitamos
+    <br>y complemos nuestra misión!</p>
+
+    <div class="swiper-container bitacora-swiper">
+      <div class="swiper-wrapper">
+        <!-- Aquí se generarán los slides del carrusel de Bitacora -->
+      </div>
+    </div>
+
+    <h1>.</h1>
+    <h1>.</h1>
+    <h1>.</h1>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+    <script src="index_Firestore.js"></script>
+    <script src="misiones_ver.js"></script>
+
+
+  </body>
+</html>
+
+<!--     -->

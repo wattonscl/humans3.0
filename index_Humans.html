@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Humans</title>
+    <link rel="stylesheet" href="./index_Humans.css">
+
+  </head>
+
+  <body align="center">
+
+    <h1>.</h1>
+    <h1>.</h1>
+
+    <h1>Humans</h1>
+    <img  src="images/icon.png" width="100px">
+
+    <h2>Ingresa o Registrate</h2>
+    <p>Si tu usuario no existe, se creará 
+    <br>con el email y contraseña que ingreses.
+    <br><strong>Recuérdalos!</strong>.</p>
+
+    <form id="miFormulario">
+      <label for="email">Email:</label>
+      <input type="email" id="id_email">
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="id_password">
+      <br> 
+      <button id="id_boton" type="button" onclick="ingresar()"> Ingresar </button>
+      <br>
+    </form>
+
+    <h1>.</h1>
+    <h1>.</h1>
+    <h1>.</h1>
+
+   
+  <!--<script type="module" src="./index_Firestore.js"></script>
+  <script type="module">
+    import { acceder_sin_google } from './index_Humans.js';
+    document.getElementById('id_boton').addEventListener('click', acceder_sin_google);
+
+  </script>-->
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+  <script src="index_Firestore.js"></script>
+  <script src="index_Humans.js"></script>
+
+  </body>
+</html>
+     
+<!--     -->

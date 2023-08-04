@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pentagrama de imágenes</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 500px; /* Ajusta el tamaño del contenedor según tus necesidades */
+            height: 500px;
+        }
+
+        .image {
+            position: absolute;
+            width: 100px; /* Ajusta el tamaño de las imágenes según tus necesidades */
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="profile-image" class="image" src="./images/Profile1.jpg" alt="Perfil">
+
+        <script>
+            // Coordenadas del centro del pentagrama
+            var centerX = 250; // Ajusta la posición central en el eje X
+            var centerY = 350; // Ajusta la posición central en el eje Y
+
+            // Radio del pentagrama
+            var radius = 120; // Ajusta el radio según tus necesidades
+
+            // Ángulo inicial
+            var angle = 0;
+
+            // Número de imágenes alrededor del pentagrama
+            var numImages = 3; // Nivel 1: 12 personas - Nivel 2 : 7 personas
+
+            // Velocidad de rotación de las imágenes (en grados por segundo)
+            var rotationSpeed = 1;
+
+            // Obtener el contenedor
+            var container = document.querySelector('.container');
+
+            // Calcular la posición de la imagen principal
+            var profileImage = document.getElementById('profile-image');
+            var profileX = centerX - profileImage.offsetWidth / 2;
+            var profileY = centerY - profileImage.offsetHeight / 2;
+            profileImage.style.left = profileX + 'px';
+            profileImage.style.top = profileY + 'px';
+
+            // Crear las imágenes adicionales
+            var images = [];
+            for (var i = 0; i < numImages; i++) {
+                // Calcular la posición de la imagen en el pentagrama
+                var x = centerX + radius * Math.cos(angle);
+                var y = centerY + radius * Math.sin(angle);
+
+                // Calcular el centro de cada imagen
+                var imageX = x - profileImage.offsetWidth / 2;
+                var imageY = y - profileImage.offsetHeight / 2;
+
+                // Crear la imagen
+                var image = document.createElement('img');
+                image.src = './images/Profile' + (i + 2) + '.jpg'; // Cambia el número de imagen según tus necesidades
+                image.className = 'image';
+                image.style.left = imageX + 'px';
+                image.style.top = imageY + 'px';
+
+                // Añadir la imagen al contenedor
+                container.appendChild(image);
+
+                // Añadir la imagen al arreglo para su posterior rotación
+                images.push(image);
+
+                // Incrementar el ángulo para la siguiente imagen
+                angle += (2 * Math.PI) / numImages;
+            }
+
+            // Rotar las imágenes alrededor del pentagrama
+            setInterval(function() {
+                for (var i = 0; i < images.length; i++) {
+                    var image = images[i];
+                    var currentAngle = (angle + (i * 2 * Math.PI) / numImages) % (2 * Math.PI);
+                    var x = centerX + radius * Math.cos(currentAngle);
+                    var y = centerY + radius * Math.sin(currentAngle);
+                    var imageX = x - profileImage.offsetWidth / 2;
+                    var imageY = y - profileImage.offsetHeight / 2;
+                    image.style.left = imageX + 'px';
+                    image.style.top = imageY + 'px';
+                }
+                angle += rotationSpeed * Math.PI / 180;
+            }, 1000 / 60); // 60 frames por segundo (ajusta el valor según tus necesidades)
+        </script>
+    </div>
+</body>
+</html>

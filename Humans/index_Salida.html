@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <meta charset="UTF-8">
+    <title>Humans - Salida</title>
+
+    <style>
+      body {
+        background-color: black;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: contain;
+        height: 100vh; /* Añadir esto para centrar verticalmente */
+        display: flex; /* Añadir esto para centrar verticalmente */
+        justify-content: center; /* Añadir esto para centrar horizontalmente */
+        align-items: center; /* Añadir esto para centrar verticalmente */
+      }
+    </style>
+
+  </head>
+
+  <body align="center">
+     
+    <div id="tableContainer">
+      <table>
+
+      <tr>
+        <td colspan="2">
+          
+          <h1 id="title_page"></h1>
+
+          <h2>Ficha Humano</h2>
+          <div id="userData" align="left"></div>
+
+          <h2>Editar</h2>
+          <div id="userDataEdit" align="left"></div>
+
+          <br><br><br>
+        </td>
+      </tr>
+      <td VALIGN="TOP"><img src="./images/tierra.png" height="100px">
+        <h2>Me arrepentí</h2>
+        <p>Wena, sigamos <strong>colaborando!</strong>.</p>
+      <button id="id_boton_misiones" type="button" onclick="ir_a_misiones()"> Ver Misiones </button>
+      
+    </td>
+      <td VALIGN="TOP"><img  src="images/icon.png" height="100px">
+        <h2>Cerrar Sesión</h2>
+        <p>Gracias Humano por tus <strong>colaboraciones</strong>.
+        <br>La <strong>vida</strong> sobre el planeta Tierra
+        <br>nos necesita a todos en permanente <strong>humanización</strong>.
+        <br>Contamos contigo, hasta pronto!.</p>
+      <button id="id_boton_cerrar" type="button" onclick="salir_registrar()">Cerrar Sesión</button>    
+      <br></td>
+
+      <tr>
+
+      </tr>
+    </table>
+  </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+    <script src="index_Firestore.js"></script>
+    <script src="index_Salida.js"></script>
+
+  </body>
+
+</html>
+
+<!--     -->

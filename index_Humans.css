@@ -1,0 +1,116 @@
+  /* Importa la hoja de estilos de Swiper */
+  @import url('https://unpkg.com/swiper/swiper-bundle.min.css');
+
+  /* Estilos generales */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+    margin: 50px 0;
+  }
+  
+  /* Estilos del carrusel */
+  .swiper-container {
+    width: 100%;
+    padding: 50px 0;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    vertical-align: middle;
+  }
+  
+  .swiper-slide button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .swiper-slide button:hover {
+    background-color: #0d47a1;
+  }
+  
+  /* Estilos de los botones de navegación Bitacora y Mision*/
+  .swiper-button-prev,
+  .swiper-button-next,
+  .swiper-button-prev-m,
+  .swiper-button-next-m  {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+  }
+  
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover,
+  .swiper-button-prev-m:hover,
+  .swiper-button-next-m:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-prev-m {
+    left: 20px;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-next-m {
+    right: 20px;
+  }
+  
+  /* Estilos de los botones de navegación Mision */
+  .swiper-button-prev-m,
+  .swiper-button-next-m {
+    top: 80%;
+  }
+  
+  .swiper-pagination{
+    top: 50%;
+  }
+  
+  .swiper-pagination-m{
+    top: 80%;
+  }
+
+  body {
+    background-image: url("images/pergamino5.png");
+    /*background-size: cover;
+    background-repeat: repeat;*/
+    background-color: black;
+    background-repeat: repeat-y;
+    background-size: auto 1000px;
+    background-position: center top;
+  }
+
+  

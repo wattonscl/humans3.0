@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #container {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            margin: 0 auto;
+            border: 1px solid black;
+            perspective: 300px;
+        }
+
+        .orbit {
+            position: absolute;
+            margin: 0 auto;
+            border: 1px solid black;
+            top: 50%;
+            left: 50%;
+            transform-origin: 50% 50%;
+            border-radius: 50%;
+        }
+
+        /* Estilos para las órbitas */
+        .orbit-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: 50% 50%;
+            border: 1px dashed rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+        }
+
+                /* Estilos para los ejes */
+                .axis {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-color: red; /* Color del eje x */
+            transform-origin: 50% 0%;
+            pointer-events: none;
+        }
+
+        .axis-y {
+            background-color: green; /* Color del eje y */
+        }
+
+        .axis-z {
+            background-color: blue; /* Color del eje z */
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <!-- Ejes -->
+        <div class="axis" style="transform: rotateY(90deg);"></div>
+        <div class="axis axis-y" style="transform: rotateX(-90deg);"></div>
+        <div class="axis axis-z" style="transform: translateZ(-400px);"></div>
+         
+        <img id="centralImage" src="Profile1.jpg"  width="100" class="orbit">
+
+        <!-- Órbita 1 -->
+        <div class="orbit-circle" style="width: 200px; height: 200px; margin-top: -100px; margin-left: -100px;"></div>
+        
+        <img id="orbitImage1a" src="Profile2.jpg" width="75" class="orbit">
+        <img id="orbitImage1b" src="Profile3.jpg" width="75" class="orbit">
+        <img id="orbitImage1c" src="Profile4.jpg" width="75" class="orbit">
+
+        <img id="orbitImage1a_" src="Profile5.jpg" width="75" class="orbit">
+        <img id="orbitImage1b_" src="Profile6.jpg" width="75" class="orbit">
+        <img id="orbitImage1c_" src="Profile7.jpg" width="75" class="orbit">
+
+        <!-- Órbita 2 -->
+        <div class="orbit-circle" style="width: 350px; height: 350px; margin-top: -175px; margin-left: -175px;"></div>
+
+        <img id="orbitImage2a" src="Profile8.jpg" width="75" class="orbit">
+        <img id="orbitImage2b" src="Profile9.jpg" width="75" class="orbit">
+        <img id="orbitImage2c" src="Profile10.jpg" width="75" class="orbit">
+
+        <!-- Órbita 3 -->
+        <div class="orbit-circle" style="width: 425px; height: 425px; margin-top: -212.5px; margin-left: -212.5px;"></div>
+
+        <img id="orbitImage3a" src="Profile11.jpg" width="75" class="orbit">
+        <img id="orbitImage3b" src="Profile12.jpg" width="75" class="orbit">
+        <img id="orbitImage3c" src="Profile13.jpg" width="75" class="orbit">
+        <img id="orbitImage3d" src="Profile14.jpg" width="75" class="orbit">
+        <img id="orbitImage3e" src="Profile15.jpg" width="75" class="orbit">
+
+        <div id="info"></div>
+        <div id="info2"></div>
+    </div>
+
+    <script>
+        // Variables para la animación
+        var centralImage = document.getElementById('centralImage');
+
+        var orbitImage1a = document.getElementById('orbitImage1a');
+        var orbitImage1b = document.getElementById('orbitImage1b');
+        var orbitImage1c = document.getElementById('orbitImage1c');
+        var orbitImage1a_ = document.getElementById('orbitImage1a_');
+        var orbitImage1b_ = document.getElementById('orbitImage1b_');
+        var orbitImage1c_ = document.getElementById('orbitImage1c_');
+
+        var orbitImage2a = document.getElementById('orbitImage2a');
+        var orbitImage2b = document.getElementById('orbitImage2b');
+        var orbitImage2c = document.getElementById('orbitImage2c');
+
+        var orbitImage3a = document.getElementById('orbitImage3a');
+        var orbitImage3b = document.getElementById('orbitImage3b');
+        var orbitImage3c = document.getElementById('orbitImage3c');
+        var orbitImage3d = document.getElementById('orbitImage3d');
+        var orbitImage3e = document.getElementById('orbitImage3e');
+
+
+        function orbitar( imagen_, radio_, angulo_orbita_, angulo_inicial_, speed1_ ) {
+            
+            var angulo_giro_ = (speed1_*1.0 * Date.now()) % (2 * Math.PI);
+            
+            var x1a = radio_ * Math.cos(angulo_giro_+angulo_inicial_*Math.PI/180) * Math.cos(angulo_orbita_*Math.PI/180);
+            var y1a = radio_ * Math.sin(angulo_giro_+angulo_inicial_*Math.PI/180);
+            var z1a = radio_ * Math.cos(angulo_giro_+angulo_inicial_*Math.PI/180) * Math.sin(angulo_orbita_*Math.PI/180);
+
+            imagen_.style.zIndex = Math.round(z1a);
+
+            imagen_.style.transform = `translate3d(${x1a-37}px, ${y1a-37}px, ${z1a}px)`;
+            //rotationAngle += 1;
+            //imagen_.style.transform = `translate3d(${x1a-37}px, ${y1a-37}px, ${z1a}px) rotateY(${rotationAngle}deg)`; 
+        }
+
+        // Función para animar las imágenes en la órbita
+        function animateOrbit() {
+
+                orbitar( orbitImage1a, 110,  45,   0, 0.0005);
+                orbitar( orbitImage1b, 110,  45, 120, 0.0005);
+                orbitar( orbitImage1c, 110,  45, 240, 0.0005);
+
+                orbitar( orbitImage1a_, 110, 135,  60, 0.0005);
+                orbitar( orbitImage1b_, 110, 135, 180, 0.0005);
+                orbitar( orbitImage1c_, 110, 135, 300, 0.0005);
+
+                orbitar( orbitImage2a, 200,  45,   0, 0.0005);
+                orbitar( orbitImage2b, 200,  45, 120, 0.0005);
+                orbitar( orbitImage2c, 200,  45, 240, 0.0005);
+
+                orbitar( orbitImage3a, 200, 135,  60, 0.0005);
+                orbitar( orbitImage3b, 200, 135, 120, 0.0005);
+                orbitar( orbitImage3c, 200, 135, 180, 0.0005);
+                orbitar( orbitImage3d, 200, 135, 240, 0.0005);
+                orbitar( orbitImage3e, 200, 135, 300, 0.0005);
+
+            
+           
+            centralImage.style.transform = `translate3d(${-50}px, ${-50}px, ${0}px)`;
+
+            // Actualiza el texto con los valores de x, y, z
+            /*var info = document.getElementById('info');
+            info.textContent = `Image 1: x=${x1a.toFixed(0)}, y=${y1a.toFixed(0)}, z=${z1a.toFixed(0)}\n`
+                             + `Image 2: x=${x2b.toFixed(0)}, y=${y2b.toFixed(0)}, z=${z2b.toFixed(0)}\n`
+                             + `Image 3: x=${x3c.toFixed(0)}, y=${y3c.toFixed(0)}, z=${z3c.toFixed(0)}`;*/
+            /*var info = document.getElementById('info2');
+            info2.textContent = `Image 1: angleXY=${angleXY.toFixed(2)}, y=${angleXZ.toFixed(2)}\n`
+                              + `Image 2: angleXY=${(angleXY+Math.PI*2/3).toFixed(2)}, y=${(angleXZ-Math.PI*2/3).toFixed(2)}\n`
+                              + `Image 3: angleXY=${(angleXY-Math.PI*2/3).toFixed(2)}, y=${(angleXZ+Math.PI*2/3).toFixed(2)}`;*/
+
+            // Repite la animación
+            requestAnimationFrame(animateOrbit);
+        }
+
+        // Inicia la animación
+        animateOrbit();
+    </script>
+</body>
+</html>

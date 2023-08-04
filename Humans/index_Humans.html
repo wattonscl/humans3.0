@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <meta charset="UTF-8">
+    <title>Humans - Ingreso</title>
+
+    <style>
+      body {
+        background-color: black;
+        background-image: url("images/pergamino_h.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: contain;
+        height: 100vh; /* Añadir esto para centrar verticalmente */
+        display: flex; /* Añadir esto para centrar verticalmente */
+        justify-content: center; /* Añadir esto para centrar horizontalmente */
+        align-items: center; /* Añadir esto para centrar verticalmente */
+      }
+    </style>
+
+  </head>
+
+  <body align="center">
+
+    <table style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+      <tr >
+        <td  >  
+          
+          <h1>Humans</h1>
+          <img  src="images/icon.png" width="100px">
+          <h2>Ingresa o Registrate</h2>
+          <p>Si tu usuario no existe, se creará 
+          <br>con el email y contraseña que ingreses.
+          <br><strong>Recuérdalos!</strong></p>
+        
+          <form id="miFormulario">
+            <table >
+              <tr>
+                <td align="left"><label for="email">Email</label></td>
+                <td>:</td>
+                <td><input type="email" id="id_email"></td>
+              </tr>
+              <tr>
+                <td align="left"><label for="password">Password</label></td>
+                <td>:</td>
+                <td><input type="password" id="id_password"></td>
+              </tr>
+            </table>
+            <br>
+            <button id="id_boton" type="button" onclick="ingresar()"> Ingresar </button>
+          </form>
+
+        </td>
+      </tr>
+    </table>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+    <script src="index_Firestore.js"></script>
+    <script src="index_Humans.js"></script>
+
+  </body>
+
+</html>
+     
+<!--     -->

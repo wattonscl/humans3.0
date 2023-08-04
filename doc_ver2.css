@@ -1,0 +1,38 @@
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  scrollbar-width: none; /* Oculta la barra de desplazamiento en navegadores que lo soportan */
+  -ms-overflow-style: none; /* Oculta la barra de desplazamiento en Internet Explorer y Microsoft Edge */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Oculta la barra de desplazamiento en navegadores WebKit */
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 336px;
+  height: 400px;
+  margin-right: 10px;
+  background-image: url('images/pergamino5.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  font-family: Arial, sans-serif;
+}
+
+.card h2 {
+  margin: 0;
+}
+
+.card p {
+  margin: 5px 0;
+}
